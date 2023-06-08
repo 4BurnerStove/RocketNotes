@@ -5,11 +5,9 @@ export default createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-size: 62.5%;
   }
 
-  #root {
-    font-size: 67.5%;
-  }
 
   a {
     text-decoration: none;
