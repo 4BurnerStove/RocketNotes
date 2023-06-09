@@ -8,7 +8,7 @@ export const Container = styled.button`
   height: 5.6rem;
   border: 0;
   padding: 0 1.6rem;
-  margin-top: 1.6rem;
+  margin-top: 4.4rem;
   border-radius: 1rem;
   font-weight: 500;
 
@@ -16,3 +16,4 @@ export const Container = styled.button`
     opacity: 0.5;
   }
 `
+

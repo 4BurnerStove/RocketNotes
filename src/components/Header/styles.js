@@ -25,9 +25,6 @@ export const Profile = styled.div`
     border-radius: 50%;
   }
 
-  > span {
-    color: red;
-  }
 
   > div {
     display: flex;
