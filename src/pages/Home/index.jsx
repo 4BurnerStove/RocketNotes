@@ -33,6 +33,46 @@ export function Home() {
           ]
         }
         }></Note>
+        <Note data={{
+          title: 'React',
+          tags: [
+            { id: '1', name: 'React' },
+            { id: '2', name: 'NodeJs'}
+          ]
+        }
+        }></Note>
+        <Note data={{
+          title: 'React',
+          tags: [
+            { id: '1', name: 'React' },
+            { id: '2', name: 'NodeJs'}
+          ]
+        }
+        }></Note>
+        <Note data={{
+          title: 'React',
+          tags: [
+            { id: '1', name: 'React' },
+            { id: '2', name: 'NodeJs'}
+          ]
+        }
+        }></Note>
+        <Note data={{
+          title: 'React',
+          tags: [
+            { id: '1', name: 'React' },
+            { id: '2', name: 'NodeJs'}
+          ]
+        }
+        }></Note>
+        <Note data={{
+          title: 'React',
+          tags: [
+            { id: '1', name: 'React' },
+            { id: '2', name: 'NodeJs'}
+          ]
+        }
+        }></Note>
       </Content>
       <NewNote>
         <FiPlus></FiPlus>
