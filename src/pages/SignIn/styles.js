@@ -1,8 +1,11 @@
+import { ButtonText } from '../../components/ButtonText'
 import styled from 'styled-components'
 
 export const Container = styled.div`
 height: 100vh;
 
+display: flex;
+align-items: stretch;
 `
 
 export const Form = styled.form`
@@ -13,4 +16,24 @@ export const Form = styled.form`
   align-items: center;
 
   text-align: center;
+
+  h1 {
+    font-size: 4.8rem;
+    color: ${({theme }) => theme.COLORS.ORANGE}
+  }
+
+   h2 {
+    font-size: 2.4rem;
+    margin: 8.4rem 0 2.4rem 0
+  }
+
+   p {
+    font-size: 1.4rem;
+    color: ${({theme }) => theme.COLORS.GRAY_100}
+  }
+`
+
+export const AlButtonText = styled(ButtonText)`
+  margin-top: 12.4rem;
+  color: ${({theme }) => theme.COLORS.ORANGE};
 `
