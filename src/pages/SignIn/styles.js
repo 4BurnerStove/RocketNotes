@@ -1,5 +1,6 @@
 import { ButtonText } from '../../components/ButtonText'
 import styled from 'styled-components'
+import backgroundImg from '../../assets/background.png'
 
 export const Container = styled.div`
 height: 100vh;
@@ -32,6 +33,13 @@ export const Form = styled.form`
     color: ${({theme }) => theme.COLORS.GRAY_100}
   }
 `
+
+export const Background = styled.div`
+  flex: 1;
+  background: url(${backgroundImg}) no-repeat center center;
+  background-size: cover;
+`
+
 
 export const AlButtonText = styled(ButtonText)`
   margin-top: 12.4rem;

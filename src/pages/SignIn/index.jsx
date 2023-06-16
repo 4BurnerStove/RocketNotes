@@ -1,7 +1,7 @@
 import { Input } from '../../components/Input'
 import { FiLogIn, FiMail, FiLock } from 'react-icons/fi'
 import { Button } from '../../components/Button'
-import { Container, Form, AlButtonText } from './styles'
+import { Container, Form, AlButtonText, Background } from './styles'
 
 
 export function SignIn() {
@@ -19,6 +19,8 @@ export function SignIn() {
         <AlButtonText name='Criar conta'></AlButtonText>
         
       </Form>
+
+      <Background></Background>
     </Container>
   )
 }
