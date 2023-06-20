@@ -18,6 +18,10 @@ export const Form = styled.form`
 
   text-align: center;
 
+  button {
+    
+  }
+
   h1 {
     font-size: 4.8rem;
     color: ${({theme }) => theme.COLORS.ORANGE}
