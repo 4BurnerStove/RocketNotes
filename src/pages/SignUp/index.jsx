@@ -6,7 +6,7 @@ import { Button } from '../../components/Button'
 import { Container, Form, AlButtonText, Background } from './styles'
 import { Link } from 'react-router-dom'
 
-import { api } from '../../../../API/src/services/api'
+import { api } from '../../services/api'
 
 export function SignUp() {
   const [name, setName] = useState("");
@@ -19,6 +19,17 @@ export function SignUp() {
     }
 
     api.post('/users', {name, email, password})
+    .then(() => {
+      alert('Usuário cadastrado com sucesso!')
+    })
+    .catch(error => {
+      if(error.res){
+        alert(error.res.data.message)
+      }else{
+        alert('Não foi possivel cadastrar usuário')
+      }
+    })
+
   }
 
   return (
