@@ -23,7 +23,11 @@ export const Form = styled.form`
     color: ${({theme }) => theme.COLORS.ORANGE}
   }
 
-   h2 {
+  a {
+  margin-top: 12.4rem;
+  }
+
+  h2 {
     font-size: 2.4rem;
     margin-block: 4.8rem;
   }
@@ -42,6 +46,5 @@ export const Background = styled.div`
 
 
 export const AlButtonText = styled(ButtonText)`
-  margin-top: 12.4rem;
   color: ${({theme }) => theme.COLORS.ORANGE};
 `

@@ -18,8 +18,8 @@ export const Form = styled.form`
 
   text-align: center;
 
-  button {
-    
+  a {
+  margin-top: 12.4rem;
   }
 
   h1 {
@@ -31,6 +31,7 @@ export const Form = styled.form`
     font-size: 2.4rem;
     margin-block: 4.8rem;
   }
+  
 
    p {
     font-size: 1.4rem;
@@ -46,6 +47,5 @@ export const Background = styled.div`
 
 
 export const AlButtonText = styled(ButtonText)`
-  margin-top: 12.4rem;
   color: ${({theme }) => theme.COLORS.ORANGE};
 `
