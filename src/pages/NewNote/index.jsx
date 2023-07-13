@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 import { Header } from '../../components/Header'
 import { Input } from '../../components/Input'
 import { Textarea } from '../../components/Textarea'
@@ -9,6 +11,18 @@ import { Link } from 'react-router-dom'
 import { Container, Form } from './styles'
 
 export function NewNote() {
+  const [links, setLinks] = useState([])
+  const [newLink, setNewLink] = useState('')
+
+  function handleAddLink(){
+    if(!newLink){
+      return 
+    }
+    
+    setLinks(prevState => [...prevState, newLink])
+    setNewLink('')
+  }
+
   return (
     <Container>
       <Header></Header>
@@ -22,8 +36,24 @@ export function NewNote() {
           <Textarea placeholder='Observações'></Textarea>
 
           <Section name='Links úteis'>
-            <NoteItem value='https://www.google.com'></NoteItem>
-            <NoteItem placeholder='Novo link' isNew></NoteItem>
+            {
+              links.map((link, index) => (
+                <NoteItem 
+                key={String(index)}
+                value={link}
+                onClick={() => {}}
+              ></NoteItem>
+              ))
+            }
+
+            <NoteItem 
+              isNew
+              placeholder="Novo Link"
+              value={newLink}
+              onChange={e => setNewLink(e.target.value)}
+              onClick={handleAddLink}
+            ></NoteItem>
+           
           </Section>
 
           <Section name='Marcadores'>
