@@ -18,7 +18,6 @@ export function NewNote() {
     if(!newLink){
       return 
     }
-    
     setLinks(prevState => [...prevState, newLink])
     setNewLink('')
   }
