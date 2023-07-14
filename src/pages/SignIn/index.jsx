@@ -1,12 +1,19 @@
+import { useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { FiMail, FiLock } from 'react-icons/fi'
 
+import { myContext } from '../../myContext'
+
+import { FiMail, FiLock } from 'react-icons/fi'
 import { Input } from '../../components/Input'
 import { Button } from '../../components/Button'
 
 import { Container, Form, AlButtonText, Background } from './styles'
 
 export function SignIn() {
+  const data = useContext(myContext)
+  console.log("My context =>", data)
+
+
   return (
     <Container>
       <Form>
