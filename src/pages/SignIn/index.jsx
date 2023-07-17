@@ -1,4 +1,4 @@
-
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import { useAuth } from '../../hooks/auth'
@@ -10,9 +10,14 @@ import { Button } from '../../components/Button'
 import { Container, Form, AlButtonText, Background } from './styles'
 
 export function SignIn() {
-  const data = useAuth()
-  console.log("My context =>", data)
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
 
+  const { signIn } = useAuth()
+
+  function handleSignIn() {
+    signIn({email, password})
+  }
 
   return (
     <Container>
@@ -21,13 +26,23 @@ export function SignIn() {
         <p>Aplicação para salvar e  gerenciar seus links úteis.</p>
 
         <h2>Faça seu login</h2>
+        
+        <Input placeholder="Email"
+        type="text"
+        icon={FiMail}
+        onChange={e => setEmail(e.target.value)}
+        />
 
-        <Input placeholder='E-mail' type='text' icon={FiMail}></Input>
-        <Input placeholder='E-mail' type='password' icon={FiLock}></Input>
-        <Button name='Entrar'></Button>
+        <Input placeholder="Senha"
+        type="password"
+        icon={FiLock}
+        onChange={e => setPassword(e.target.value)}
+        />
+
+       <Button name="Entrar" onClick={handleSignIn}/>
 
         <Link to='/register'>
-          <AlButtonText name='Criar conta'/>
+          <AlButtonText name='Criar conta' />
         </Link>
 
       </Form>
