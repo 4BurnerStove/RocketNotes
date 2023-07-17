@@ -8,7 +8,6 @@ function AuthProvider({ children }) {
   const [data, setData] = useState({})
 
   async function signIn({ email, password }) {
-
     try {
       const response = await api.post("/sessions", { email, password })
       const { user, token } = response.data
@@ -23,11 +22,30 @@ function AuthProvider({ children }) {
         alert("Não foi possivel executar o login.")
       }
     }
+  }
 
+  function signUp({ name, email, password }, navi) {
+
+    if (!name || !email || !password) {
+      return alert(`Preencha todos os campos!`)
+    }
+
+    api.post('/users', { name, email, password })
+      .then(() => {
+        alert('Usuário cadastrado com sucesso!')
+        navi()
+      })
+      .catch(error => {
+        if (error.response) {
+          alert(error.response.data.message)
+        } else {
+          alert('Não foi possivel cadastrar usuário')
+        }
+      })
   }
 
   return (
-    <AuthContext.Provider value={{ signIn, user: data.user }}>
+    <AuthContext.Provider value={{ signUp, signIn, user: data.user }}>
       {children}
     </AuthContext.Provider>
   )
