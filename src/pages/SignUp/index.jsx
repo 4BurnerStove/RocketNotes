@@ -21,7 +21,6 @@ export function SignUp() {
       if(navi) {
         return
       }
-      
       navigate('/')
     })
   }
