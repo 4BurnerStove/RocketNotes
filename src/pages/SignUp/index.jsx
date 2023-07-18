@@ -9,7 +9,6 @@ import { Button } from '../../components/Button'
 import { Container, Form, AlButtonText, Background } from './styles'
 import { Link } from 'react-router-dom'
 
-
 export function SignUp() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -17,18 +16,16 @@ export function SignUp() {
   const { signUp } = useAuth()
   const navigate = useNavigate()
 
-
-
   function handleSignUp() {
     signUp({ name, email, password }, (navi) => {
       if(navi) {
         return
       }
+      
       navigate('/')
     })
   }
  
-
   return (
     <Container>
       <Background></Background>
@@ -58,15 +55,11 @@ export function SignUp() {
           icon={FiLock}
           onChange={e => setPassword(e.target.value)}
         ></Input>
-
-        <Button name='Cadastrar' onClick={handleSignUp}></Button>
-
+          <Button name='Cadastrar' onClick={handleSignUp}></Button>
         <Link to='/'>
           <AlButtonText type='button' name='Voltar para o login' />
         </Link>
-
       </Form>
-
     </Container>
   )
 }
