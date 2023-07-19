@@ -12,6 +12,9 @@ function AuthProvider({ children }) {
       const response = await api.post("/sessions", { email, password })
       const { user, token } = response.data
 
+      localStorage.setItem("@rocketnotes:user", JSON.stringify(user))
+      localStorage.setItem("@rocketnotes:token", token)
+
       api.defaults.headers.authorization = `Bearer ${token}`
       setData({ user, token })
     }
