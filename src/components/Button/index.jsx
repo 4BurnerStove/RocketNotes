@@ -10,6 +10,5 @@ export function Button({ name, loading = false, ...rest }) {
     >
       {loading ? 'Carregando...' : name}
     </Container >
-
   )
 }

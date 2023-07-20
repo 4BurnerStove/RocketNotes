@@ -7,7 +7,6 @@ import { ButtonText } from '../../components/ButtonText'
 
 
 export function Details() {
-
   return (
     <Container>
       <Header></Header>
