@@ -1,4 +1,5 @@
 import { Container, Brand, Menu, Search, Content, NewNote } from './styles'
+
 import { Link } from 'react'
 
 import { FiPlus } from 'react-icons/fi'
@@ -27,46 +28,6 @@ export function Home() {
 
       <Content>
         <Section name='Minhas notas'></Section>
-        <Note data={{
-          title: 'React',
-          tags: [
-            { id: '1', name: 'React' },
-            { id: '2', name: 'NodeJs'}
-          ]
-        }
-        }></Note>
-        <Note data={{
-          title: 'React',
-          tags: [
-            { id: '1', name: 'React' },
-            { id: '2', name: 'NodeJs'}
-          ]
-        }
-        }></Note>
-        <Note data={{
-          title: 'React',
-          tags: [
-            { id: '1', name: 'React' },
-            { id: '2', name: 'NodeJs'}
-          ]
-        }
-        }></Note>
-        <Note data={{
-          title: 'React',
-          tags: [
-            { id: '1', name: 'React' },
-            { id: '2', name: 'NodeJs'}
-          ]
-        }
-        }></Note>
-        <Note data={{
-          title: 'React',
-          tags: [
-            { id: '1', name: 'React' },
-            { id: '2', name: 'NodeJs'}
-          ]
-        }
-        }></Note>
         <Note data={{
           title: 'React',
           tags: [

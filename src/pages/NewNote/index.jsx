@@ -22,6 +22,10 @@ export function NewNote() {
     setNewLink('')
   }
 
+  function handleRemoveLink(delet){
+    setLinks(prevState => prevState.filter(link => link !== delet))
+  }
+
   return (
     <Container>
       <Header></Header>
@@ -40,7 +44,7 @@ export function NewNote() {
                 <NoteItem 
                 key={String(index)}
                 value={link}
-                onClick={() => {}}
+                onClick={() => {handleRemoveLink(link)}}
               ></NoteItem>
               ))
             }
