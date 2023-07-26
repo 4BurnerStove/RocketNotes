@@ -17,12 +17,11 @@ export function Profile() {
   const [email, setEmail] = useState(user.email)
   const [Oldpassword, setOldpassword] = useState('')
   const [Newpassword, setNewpassword] = useState('')
-  const [avatar, setAvatar] = useState(avatarUrl)
-  const [avatarFile, setAvatarFile] = useState(null)
 
   const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder
-
-
+  
+  const [avatar, setAvatar] = useState(avatarUrl)
+  const [avatarFile, setAvatarFile] = useState(null)
 
   function handleChangeAvatar(event) {
     const file = event.target.files[0]
