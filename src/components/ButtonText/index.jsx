@@ -4,7 +4,7 @@ export function ButtonText({ name, isActive = false, ...rest }) {
   return (
     <Container
       type="button"
-      $isactive={isActive.toString()}
+      $isactive={isActive}
       {...rest}
     >
       {name}
