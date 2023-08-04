@@ -1,5 +1,6 @@
 import { Container, Brand, Menu, Search, Content, NewNote } from './styles'
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 import { FiPlus } from 'react-icons/fi'
 import { Header } from '../../components/Header'
@@ -15,13 +16,16 @@ export function Home() {
   const [tags, setTags] = useState([])
   const [tagsSelected, setTagsSelected] = useState([])
   const [notes, setNotes] = useState([])
+  const navigate = useNavigate()
+
 
   function handleTagSelected(tagName) {
-    const alreadySelected = tagsSelected.includes(tagName)
 
     if (tagName === 'all') {
       return setTagsSelected([])
     }
+
+    const alreadySelected = tagsSelected.includes(tagName)
 
     if (alreadySelected) {
       const filteredTags = tagsSelected.filter(tag => tag !== tagName)
@@ -29,6 +33,10 @@ export function Home() {
     } else {
       setTagsSelected(prevState => [...prevState, tagName])
     }
+  }
+
+  function handleDeatils(id){
+    navigate(`/details/${id}`)
   }
 
   useEffect(() => {
@@ -78,7 +86,7 @@ export function Home() {
       <Search>
         <Input
           placeholder='Faça sua pesquisa aqui'
-          onChange={() => setSearch(e.target.value)}
+          onChange={(e) => setSearch(e.target.value)}
         ></Input>
       </Search>
 
@@ -86,8 +94,12 @@ export function Home() {
         <Section name='Minhas notas'></Section>
         {
           notes.map(note => (
-            <Note key={String(note.id)} data={note}></Note>
-            )
+            <Note 
+            key={String(note.id)} 
+            data={note}
+            onClick={() => handleDeatils(note.id)}
+            />
+          )
           )
         }
       </Content>

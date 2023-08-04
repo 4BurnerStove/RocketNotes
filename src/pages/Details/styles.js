@@ -37,11 +37,6 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   
-
-  >button:first-child{
-    align-self: end;
-  }
-
   > h1 {
     font-size: 3.6rem;
     font-weight: 500;
@@ -53,5 +48,9 @@ export const Content = styled.div`
     margin-top: 1.6rem;
     text-align: justify;
     font-weight: 400;
+  }
+
+   > a {
+    margin-top: 2.2rem;
   }
 `
