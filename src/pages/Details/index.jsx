@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Container, Links, Content } from './styles'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
 import { api } from '../../services/api'
 
@@ -15,6 +15,7 @@ import { Link } from 'react-router-dom'
 
 export function Details() {
   const [data, setData] = useState(null)
+  const navigate = useNavigate()
 
   const params = useParams()
 
@@ -28,6 +29,15 @@ export function Details() {
 
   }, [])
 
+  async function handleRemove() {
+    const confirm = window.confirm('Deseja realmente remover esta nota?')
+
+    if (confirm) {
+      await api.delete(`notes/${params.id}`)
+      navigate('/')
+    }
+  }
+
   return (
     <Container>
       <Header></Header>
@@ -35,7 +45,10 @@ export function Details() {
         {
           data &&
           <Content>
-            <ButtonText title='Excluir nota'></ButtonText>
+            <ButtonText
+              onClick={handleRemove}
+              name='Excluir nota'
+            ></ButtonText>
 
             <h1>
               {data.title}

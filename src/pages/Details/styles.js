@@ -37,6 +37,12 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   
+
+  >button:first-child{
+    margin-top: 2.2rem;
+    align-self: end;
+  }
+
   > h1 {
     font-size: 3.6rem;
     font-weight: 500;
@@ -50,7 +56,7 @@ export const Content = styled.div`
     font-weight: 400;
   }
 
-   > a {
+  > a {
     margin-top: 2.2rem;
   }
 `
